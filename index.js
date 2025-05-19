@@ -12,7 +12,7 @@ if (button)
   });
 
 const getQuote = async () => {
-  const url = "https://api.quotable.io/random";
+  const url = 'https://dummyjson.com/quotes/random';
   const options = {
     method: "GET",
   };
@@ -21,7 +21,7 @@ const getQuote = async () => {
   try {
     const quoteResponse = await fetch(url, options);
     const quoteResult = await quoteResponse.json();
-    if (body) body.innerText = '"' + quoteResult.content + '"';
+    if (body) body.innerText = '"' + quoteResult.quote + '"';
     loading = false;
     if (button) button.classList.toggle("button--loading");
   } catch (error) {
